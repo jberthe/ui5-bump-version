@@ -1,8 +1,7 @@
 {
   "name": "ui5-bump-version",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bump version for ui5 qpplication",
-  "main": "ui5-bump-version.js",
   "scripts": {
     "test": "mocha"
   },

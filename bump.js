@@ -8,14 +8,11 @@ exports.isArgumentAvailable = function (sArg) {
 
 exports.readApplicationVersion = function (jData) {
     if (jData) {
-        console.dir("Current version: " + jData["sap.app"].applicationVersion.version);
+        console.dir("Old version: " + jData["sap.app"].applicationVersion.version);
         return jData["sap.app"].applicationVersion.version;
     }
 };
 
-exports.readFile = function (sFile) {
-    return jsonfile.readFileSync(sFile);
-};
 
 exports.detectBuild = function (sVersion) {
     let buildIdx = sVersion.indexOf('_Build');
@@ -97,6 +94,7 @@ exports.appendNewVersion = function(oData, sVersion){
     if(oData){
         newJSON = JSON.parse(JSON.stringify(oData));
         newJSON["sap.app"].applicationVersion.version = sVersion; 
+        console.dir("New version: " + sVersion);
     }
     return newJSON;
 };
