@@ -6,10 +6,17 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "jberthe",
   "license": "ISC",
   "devDependencies": {
     "jsonfile": "^5.0.0",
     "mocha": "^6.2.2"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "ui5-bump": "ui5-bump-version.js"
   }
 }

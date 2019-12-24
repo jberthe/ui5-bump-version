@@ -1,5 +1,5 @@
 var assert = require('assert');
-const bump = require('../ui5-bump-version');
+const bump = require('../bump');
 
 describe('Bump Version', function () {
   describe('#isArgumentAvailable()', function () {
