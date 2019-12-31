@@ -15,10 +15,10 @@ exports.readApplicationVersion = function (jData) {
 
 
 exports.detectBuild = function (sVersion) {
-    let buildIdx = sVersion.indexOf('_Build');
+    let buildIdx = sVersion.indexOf('+');
 
     if (buildIdx >= 0) {
-        // remove _Build statement
+        // remove + statement
         return sVersion.slice(0, buildIdx);
     } else {
         return sVersion;
@@ -59,7 +59,8 @@ exports.bumpBuild = function (sVersion) {
     let newVersion = this.detectBuild(sVersion);
 
     let dToday = new Date();
-    newVersion = newVersion + "_Build" + 
+    newVersion = newVersion + "+" + 
+                    dToday.getFullYear()
                     dToday.getMonth() + 
                     dToday.getDay() +
                     dToday.getHours() +
