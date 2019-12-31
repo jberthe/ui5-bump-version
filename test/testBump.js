@@ -34,8 +34,8 @@ describe('Bump Version', function () {
   });
 
   describe('#detectBuild()', function () {
-    it('Should detect _Build pattern', function () {
-      let newVer = bump.detectBuild("1.0.3_Build20102121");
+    it('Should detect + pattern', function () {
+      let newVer = bump.detectBuild("1.0.3+20102121");
       assert.equal(newVer, "1.0.3");
 
     });
@@ -43,7 +43,7 @@ describe('Bump Version', function () {
 
   describe('#bumpMajor()', function () {
     it('Should increase the major version', function () {
-      let newVer = bump.bumpMajor("1.0.3_Build20102121");
+      let newVer = bump.bumpMajor("1.0.3+20102121");
       assert.equal(newVer, "2.0.0");
 
       newVer = bump.bumpMajor("1.0.3");
@@ -60,7 +60,7 @@ describe('Bump Version', function () {
 
   describe('#bumpMinor()', function () {
     it('Should increase the minor version', function () {
-      let newVer = bump.bumpMinor("1.0.3_Build20102121");
+      let newVer = bump.bumpMinor("1.0.3+20102121");
       assert.equal(newVer, "1.1.0");
 
       newVer = bump.bumpMinor("1.0.3");
@@ -77,7 +77,7 @@ describe('Bump Version', function () {
 
   describe('#bumpPatch()', function () {
     it('Should increase the patch version', function () {
-      let newVer = bump.bumpPatch("1.0.3_Build20102121");
+      let newVer = bump.bumpPatch("1.0.3+20102121");
       assert.equal(newVer, "1.0.4");
 
       newVer = bump.bumpPatch("1.0.3");
@@ -94,8 +94,7 @@ describe('Bump Version', function () {
 
   describe('#bumpBuild()', function () {
     it('Should add Build pattern', function () {
-      let curDate = new Date();
-      let newVer = bump.bumpBuild("1.0.3_Build20102121");
+      let newVer = bump.bumpBuild("1.0.3+20102121");
       assert.ok(newVer);
 
 
@@ -120,7 +119,7 @@ describe('Bump Version', function () {
 
     it('Should increase the build version', function () {
       let newVer = bump.bumpVersion("1.0.3", 3);
-      assert.ok(newVer.indexOf("1.0.3_Build") >= 0);
+      assert.ok(newVer.indexOf("1.0.3+") >= 0);
     });
 
   });
