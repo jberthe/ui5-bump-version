@@ -20,8 +20,11 @@ In your SAP Fiori UI5 application directory, execute the following command. If y
 ### Patch version (from 1.0.2 to 1.0.3)
 > ui5-bump patch
 
-### Build version (from 1.0.2 to 1.0.2_Build##)
+### Build version (from 1.0.2 to 1.0.2+YYYYMMDDHHmmss)
 > ui5-bump build
 
 ## Release
-Comming soon
+### v1.0.0
+- The build pattern respect the Version semantic (before it was *_Build*, now it is +)
+- Add Year in the generated build number
+- Change the documention
