@@ -1,6 +1,6 @@
 {
   "name": "ui5-bump-version",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bump version for ui5 application",
   "scripts": {
     "test": "mocha"
@@ -12,7 +12,8 @@
     "mocha": "^6.2.2"
   },
   "dependencies": {
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "jsonfile": "^5.0.0"
   },
   "preferGlobal": true,
   "bin": {
