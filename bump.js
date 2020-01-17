@@ -60,7 +60,7 @@ exports.bumpBuild = function (sVersion) {
 
     let dToday = new Date();
     newVersion = newVersion + "+" + 
-                    dToday.getFullYear()
+                    dToday.getFullYear() +
                     dToday.getMonth() + 
                     dToday.getDay() +
                     dToday.getHours() +

@@ -24,6 +24,8 @@ In your SAP Fiori UI5 application directory, execute the following command. If y
 > ui5-bump build
 
 ## Release
+### v1.0.2
+- BugFix: Dependency *jsoonfile* added
 ### v1.0.1
 - The build pattern respect the Version semantic (before it was *_Build*, now it is +)
 - Add Year in the generated build number
