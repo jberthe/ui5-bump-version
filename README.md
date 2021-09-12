@@ -11,16 +11,27 @@ In your SAP Fiori UI5 application directory, execute the following command. If y
 
 > ui5-bump
 
-### Major version (from 1.0.2 to 2.0.0)
+### Examples
+#### Package script
+>"scripts": {
+>        "start": "fiori run --open test/flpSandbox.html?sap-client=600",
+>        "deploy_build": "ui5-bump build && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
+>        "deploy_patch": "ui5-bump patch && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
+>        "deploy_minor": "ui5-bump minor && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
+>        "deploy_major": "ui5-bump major && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
+>        ...
+>    },
+
+#### Major version (from 1.0.2 to 2.0.0)
 > ui5-bump major
 
-### Minor version (from 1.0.2 to 1.1.0)
+#### Minor version (from 1.0.2 to 1.1.0)
 > ui5-bump minor
 
-### Patch version (from 1.0.2 to 1.0.3)
+#### Patch version (from 1.0.2 to 1.0.3)
 > ui5-bump patch
 
-### Build version (from 1.0.2 to 1.0.2+YYYYMMDDHHmmss)
+#### Build version (from 1.0.2 to 1.0.2+YYYYMMDDHHmmss)
 > ui5-bump build
 
 ## Release
