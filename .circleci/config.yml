@@ -4,7 +4,10 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/node:14.15.3
+      - image: circleci/node:current
+        auth:
+          username: jberthe
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: npm install
