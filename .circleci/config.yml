@@ -5,9 +5,6 @@ jobs:
   test:
     docker:
       - image: circleci/node:14.15.3
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
       - run: npm install
@@ -17,6 +14,6 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  build_and_test:
+  test_only:
     jobs:
       - test
