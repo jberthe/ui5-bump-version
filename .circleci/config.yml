@@ -4,10 +4,8 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/node:current
-        auth:
-          username: jberthe
-          password: $DOCKERHUB_PASSWORD
+      - image: cimg/node:16.8.0
+
     steps:
       - checkout
       - run: npm install
