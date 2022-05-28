@@ -34,7 +34,17 @@ In your SAP Fiori UI5 application directory, execute the following command. If y
 #### Build version (from 1.0.2 to 1.0.2+YYYYMMDDHHmmss)
 > ui5-bump build
 
+## For Developper
+To test and run MOCHA you can run :
+> npm run test
+
+To test the full module, use VSCode and in the debug section launch the recorded configuration.
 ## Release
+### v1.1.0
+- BugFix: When writing into file, the JSON lost his formatting
+- Bugfix: the argument *path* wasn't correctly handled
+- Feature: the output is now much more clean and flexible. The new version is displayed only on the console. Like this it is possible to store it inside environement variable
+
 ### v1.0.2
 - BugFix: Dependency *jsoonfile* added
 ### v1.0.1

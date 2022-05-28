@@ -1,6 +1,6 @@
 {
   "name": "ui5-bump-version",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Bump version for ui5 application",
   "scripts": {
     "test": "mocha"

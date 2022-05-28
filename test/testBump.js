@@ -133,9 +133,10 @@ describe('Bump Version', function () {
           }
         }
       }, "3.2.3");
+
       let curVer = bump.readApplicationVersion(newData);
 
-       assert.equal(curVer, "3.2.3");
+      assert.equal(curVer, "3.2.3");
 
 
     });
