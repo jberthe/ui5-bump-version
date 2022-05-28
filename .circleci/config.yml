@@ -1,20 +1,35 @@
 version: 2.1
 
+orbs: 
+  node: circleci/node@5.0.2
+
 # Define the jobs we want to run for this project
 jobs:
   test:
-    docker:
-      - image: cimg/node:16.8.0
-
     steps:
       - checkout
-      - run: npm install
+      - node/install-packages:
+          pkg-manager: npm
       - run:
-          name: Run tests
-          command: npm test
-
+          name: "Run mocha tests"
+          command: npm run test
+  deploy:
+    steps:
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - run:
+          name: Publish package
+          command: npm publish
 # Orchestrate our job run sequence
 workflows:
   test_only:
     jobs:
       - test
+      - deploy:
+          requires: 
+            - test
+          filters:
+            branches:
+              only:
+                - master2
