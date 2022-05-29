@@ -50,7 +50,9 @@ workflows:
   test_and_deploy:
     jobs:
       - test
-      - coverage
+      - coverage:
+          requires: 
+          - test
       - deploy:
           context:
             - NPM
