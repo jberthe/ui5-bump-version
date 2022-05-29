@@ -16,7 +16,8 @@ jobs:
       - run:
           name: "Run mocha tests"
           command: |
-            $COVERALLS_REPO_TOKEN=${REPO_TOKEN_BUMPVERSION}
+            COVERALLS_REPO_TOKEN=${REPO_TOKEN_BUMPVERSION}
+            echo $COVERALLS_REPO_TOKEN
             npm install && make test-coverage
       - coveralls/upload
   deploy:
