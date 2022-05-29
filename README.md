@@ -1,8 +1,11 @@
+[![NPM Version](https://img.shields.io/npm/v/ui5-bump-version.svg?style=flat)](https://www.npmjs.org/package/karma-ui5)
+[![CircleCI](https://circleci.com/gh/jberthe/ui5-bump-version/tree/master.svg?style=shield)](https://circleci.com/gh/jberthe/ui5-bump-version/tree/master)
+
 # SAP UI5 Bump version
 This module aims to update the version from the *webapp/manifest.json* file. We based the bump process following the [Semantic Versioning 2.0.0](https://semver.org/).
 
 ## Install
-> npm install --save jsonfile
+> npm install --save ui5-bump-version
 >
 > Usage: ui5-bump {major|minor|patch|build} |path|
 
