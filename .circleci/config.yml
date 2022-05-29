@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs: 
+  coveralls: coveralls/coveralls@1.0.6
   node: circleci/node@5.0.2
 
 # Define the jobs we want to run for this project
@@ -14,7 +15,10 @@ jobs:
           pkg-manager: npm
       - run:
           name: "Run mocha tests"
-          command: npm run test
+          command: |
+            $COVERALLS_REPO_TOKEN=${REPO_TOKEN_BUMPVERSION}
+            npm install && make test-coverage
+      - coveralls/upload
   deploy:
     docker:
       - image: cimg/node:14.19.2
@@ -34,7 +38,9 @@ jobs:
 workflows:
   test_and_deploy:
     jobs:
-      - test
+      - test:
+        context: 
+          - COVERALLS
       - deploy:
           context:
             - NPM
