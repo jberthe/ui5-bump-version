@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Bump version for ui5 application",
   "scripts": {
-    "test": "mocha --reporter mocha-junit-reporter",
+    "test": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./junit/test-results.xml",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Joseph BERTHE",
