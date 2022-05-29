@@ -16,7 +16,6 @@ jobs:
       - run:
           name: "Run mocha tests"
           command: npm install && npm run coverage
-      - coveralls/upload
   deploy:
     docker:
       - image: cimg/node:14.19.2
