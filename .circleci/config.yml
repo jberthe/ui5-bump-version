@@ -40,8 +40,8 @@ workflows:
   test_and_deploy:
     jobs:
       - test:
-        context: 
-          - COVERALLS
+          context: 
+            - COVERALLS
       - deploy:
           context:
             - NPM
