@@ -12,14 +12,15 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run:
-          name: "Run mocha tests"
+      - run: npm install
+      - run: mkdir ~/junit
+      - run:  
           command: npm run test
-      - store_artifacts:
-          path: test-results
-          prefix: tests
+          environment:
+            MOCHA_FILE: ~/junit/test-results.xml
+        when: always
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: test-results
+          path: ~/junit
 
   coverage:
     docker:
