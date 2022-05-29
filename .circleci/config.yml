@@ -27,13 +27,17 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: |
+            pwd
+            npm publish --scope=public
 # Orchestrate our job run sequence
 workflows:
-  test_only:
+  test_and_deploy:
     jobs:
       - test
       - deploy:
+          contect:
+            - NPM
           requires: 
             - test
           filters:
