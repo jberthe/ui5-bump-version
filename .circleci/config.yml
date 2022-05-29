@@ -14,11 +14,11 @@ jobs:
           pkg-manager: npm
       - run: npm install
       - run: mkdir ~/junit
-      - run:  
+      - run:
           command: npm run test
           environment:
             MOCHA_FILE: ~/junit/test-results.xml
-        when: always
+          when: always
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: ~/junit
 
@@ -50,7 +50,9 @@ workflows:
   test_and_deploy:
     jobs:
       - test
-      - coverage
+      - coverage:
+          requires: 
+          - test
       - deploy:
           context:
             - NPM
