@@ -19,6 +19,9 @@ jobs:
     docker:
       - image: cimg/node:14.19.2
     steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
