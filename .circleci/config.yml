@@ -13,14 +13,11 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run: npm install
-      - run: mkdir ~/junit
       - run:
           command: npm run test
-          environment:
-            MOCHA_FILE: ~/junit/test-results.xml
           when: always
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: ~/junit
+          path: ./junit
 
   coverage:
     docker:
