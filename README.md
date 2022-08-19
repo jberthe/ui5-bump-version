@@ -13,13 +13,13 @@ In your SAP Fiori UI5 application directory, execute the following command. If y
 
 ### Examples
 #### Package script
->"scripts": {
->        "start": "fiori run --open test/flpSandbox.html?sap-client=600",
->        "deploy_build": "ui5-bump build && npm run build && npm run deploy",
->        "deploy_patch": "ui5-bump patch && npm run build && npm run deploy",
->        "deploy_minor": "ui5-bump minor && npm run build && npm run deploy",
->        "deploy_major": "ui5-bump major && npm run build && npm run deploy",
->        ...
+>"scripts": { <br>
+>        "start": "fiori run --open test/flpSandbox.html?sap-client=600", </br>
+>        "deploy_build": "ui5-bump build && npm run build && npm run deploy", <br>
+>        "deploy_patch": "ui5-bump patch && npm run build && npm run deploy", <br>
+>        "deploy_minor": "ui5-bump minor && npm run build && npm run deploy", <br>
+>        "deploy_major": "ui5-bump major && npm run build && npm run deploy", <br>
+>        ...<br>
 >    },
 
 #### Major version (from 1.0.2 to 2.0.0)
