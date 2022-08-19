@@ -15,10 +15,10 @@ In your SAP Fiori UI5 application directory, execute the following command. If y
 #### Package script
 >"scripts": {
 >        "start": "fiori run --open test/flpSandbox.html?sap-client=600",
->        "deploy_build": "ui5-bump build && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
->        "deploy_patch": "ui5-bump patch && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
->        "deploy_minor": "ui5-bump minor && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
->        "deploy_major": "ui5-bump major && npm run build && fiori deploy -- -y --config ui5-deploy.yaml && rimraf archive.zip",
+>        "deploy_build": "ui5-bump build && npm run build && npm run deploy",
+>        "deploy_patch": "ui5-bump patch && npm run build && npm run deploy",
+>        "deploy_minor": "ui5-bump minor && npm run build && npm run deploy",
+>        "deploy_major": "ui5-bump major && npm run build && npm run deploy",
 >        ...
 >    },
 
